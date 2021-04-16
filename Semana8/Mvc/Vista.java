@@ -1,0 +1,90 @@
+package Mvc;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
+import javax.swing.JSeparator;
+import javax.swing.OverlayLayout;
+public class Vista extends JFrame{
+private Modelo mo;
+public JButton total;
+private JPanel panelR,panelBu;
+public JLabel lResultado, text1,text2,text3,dia,mes,año;
+public JCheckBox c1,c2,c3,c4,c5,c6,c7,c8,c9;
+public JSeparator s1;
+public JMenuBar m1;
+public JMenu menu;
+public JMenuItem it1,it2,it3 ;
+public JTextField d,m,a;
+public Vista() {
+panelR = new JPanel();
+panelBu = new JPanel();
+c1 = new JCheckBox("Automovil");
+c2 = new JCheckBox("Camioneta");
+c3 = new JCheckBox("Lavado Básico:Incluye lavado\n" +
+"exterior, lavado interior y aspirada.");
+c4 = new JCheckBox("Lavado especial: incluye lavado básico más polichado con maquina y las\n" +
+"mejores ceras de calidad. ");
+c5 = new JCheckBox("Desinfección básica: con maquina generadora de ozono.");
+c6 = new JCheckBox("Desinfección avanzada: además de la desinfección básica, limpieza interior con\n" +
+"máquina de vapor.");
+c7 = new JCheckBox("Combo 1 Lavado, polichado y desengrasante por debajo.");
+c8 = new JCheckBox("Combo 2: combo 1 + grafitado de chasis.");
+c9 = new JCheckBox("Combo 3: combo 2 + tapicería (desmontado de sillas para un aseo más\n" +
+"profundo).");
+total = new JButton("Mostrar total a pagar =>");
+lResultado = new JLabel("Total:");
+dia = new JLabel("Dia");
+mes = new JLabel("Mes");
+año = new JLabel("Año");
+a = new  JTextField(3);
+m = new JTextField(2);
+d = new JTextField(2);
+text1 = new JLabel("Tipo de vehiculo:");
+text2 = new JLabel("Servicios que ofrecemos:");
+text3 = new JLabel("Combos:");
+s1 = new JSeparator(c2.HORIZONTAL);
+menu = new JMenu("Producciones");
+it1 = new JMenuItem("Produccio por servicio");
+it2 = new JMenuItem("Produccion por empleado");
+it3 = new JMenuItem("Produccion por rango de fecha");
+m1 = new JMenuBar();
+m1.add(menu);
+menu.add(it1);
+menu.add(it2);
+menu.add(it3);
+panelR.add(dia);
+panelR.add(d);
+panelR.add(mes);
+panelR.add(m);
+panelR.add(año);
+panelR.add(a);
+panelR.add(text1);
+panelR.add(c1);
+panelR.add(c2);
+panelR.add(s1);
+panelR.add(text2);
+panelR.add(c3);
+panelR.add(c4);
+panelR.add(c5);
+panelR.add(c6);
+panelR.add(s1);
+panelR.add(text3);
+panelR.add(c7);
+panelR.add(c8);
+panelR.add(c9);
+panelBu.add(total);
+panelBu.add(lResultado);
+add(m1, BorderLayout.BEFORE_FIRST_LINE);
+add(panelR, BorderLayout.CENTER);
+add(panelBu, BorderLayout.SOUTH);
+}
+}
